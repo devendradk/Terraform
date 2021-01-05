@@ -3,7 +3,8 @@ package terraform.analysis
 import input as tfplan
 
 violation[output] {                                                                 # line 2                                      # line 3
-  m1 = tfplan[name]["destination_ranges.#"]
+  not tfplan[name]["source_tags.#"]
+  m1 = tfplan[name]["source_ranges.#"]
   not cidr_contain(privateIPRanges, m1)
   #x1 = "pub"
   output = {
