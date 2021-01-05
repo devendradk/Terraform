@@ -13,16 +13,6 @@ violation[output] {                                                             
   }
 }
 
-deny[output] {                                                                 # line 2                                      # line 3
-  m1 = tfplan[name]["destination_ranges.#"]
-  cidr_contain(privateIPRanges, m1)
-  #x1 = "private"
-  output = {
-		"id": "private",
-		"IPaddress": m1,
-		"rule_name": tfplan[name]["name"]
-  }
-}
 
 violation[output] {                                                                 # line 2                                      # line 3
   firewallName = tfplan[name]["name"]
