@@ -16,6 +16,7 @@ violation[output] {
 
   output = {
 		"id": "Adding port range needs extra review",
+		"PortsRange": tfplan[name][Ports[j]],
 		"rule_name": tfplan[name]["name"]
   }
 }
