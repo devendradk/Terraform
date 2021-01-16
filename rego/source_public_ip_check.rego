@@ -20,3 +20,7 @@ violation[output] {
   		"rule_name": tfplan[name]["name"]
   }
 }
+
+cidr_contain(array, ip) {
+	net.cidr_contains(array[_], ip)
+}
